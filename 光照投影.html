@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{width:100px; height:100px; background:#e1ad0f; border-radius:50%;
+            box-shadow:0 0 50px red; position:absolute; left:0; top:0;
+        }
+        p{width:300px; height:200px; font-size: 35px; margin:200px auto; font-weight: bold;
+            text-shadow: 0 0 0px #000;;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.querySelector('.box');
+            var oP=document.querySelector('.word');
+            document.onmousemove=function(ev){
+                oBox.style.left=ev.pageX-oBox.offsetWidth/2+'px';
+                oBox.style.top=ev.pageY-oBox.offsetHeight/2+'px';
+                var x=oP.offsetLeft+oP.offsetWidth/2-ev.pageX;
+                var y=oP.offsetTop+oP.offsetHeight/2-ev.pageY;
+                var dis=Math.sqrt(x*x+y*y);
+                oP.style.textShadow = x/3+'px '+y/3+'px '+dis/10+'px #000';
+            };
+        };
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <p class="word">有时稍微低下头，或许我们人生路会更加精彩，我们的能力也会有所长进。</p>
+</body>
+</html>

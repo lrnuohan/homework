@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{padding:0; margin:0;}
+        @keyframes demo{
+            from{top:0;}
+            to{top:-230px;}
+        }
+        body{background:#c1c1c1;}
+        li{list-style:none;}
+        ul{width:1000px; height: 300px; margin:100px auto;}
+        li{width:230px; height:140px; float: left; margin:10px; position: relative;
+            border-radius: 20px; overflow: hidden;
+        }
+        li img{width:230px; height:140px;}
+        li div{width:230px; height:140px; position: absolute; top:0; left:0;
+            background: #999999; color:#fff; font-size: 40px; text-align: center;
+            line-height: 140px;
+        }
+        li:hover div{
+            animation:demo 2s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="img/1.png">
+            <div>Handsome</div>
+        </li>
+        <li>
+            <img src="img/2.png">
+            <div>Intimate</div>
+        </li>
+        <li>
+            <img src="img/3.png">
+            <div>Adorable</div>
+        </li>
+        <li>
+            <img src="img/4.png">
+            <div>Good</div>
+        </li>
+    </ul>
+</body>
+</html>

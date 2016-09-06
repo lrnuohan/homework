@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{width:400px; height:113px; border:1px solid #000000; margin:100px auto;
+            position: relative; overflow: hidden;
+        }
+        @keyframes dome{
+            from{top:0;}
+            to{top:-113px}
+        }
+        .content{width:400px; height:300px;
+            position: absolute;
+            left:0;
+            top:0;
+            background:-webkit-repeating-linear-gradient(-45deg,#ea11aa 0,#ea11aa 20px,#fff 20px,#fff 40px,#2ad219 40px,#2ad219 60px,#fff 60px,#fff 80px);
+            animation:dome 1s linear infinite;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oCol1=document.querySelector('.col1');
+            var oCol2=document.querySelector('.col2');
+            var oBox=document.querySelector('.box');
+            var oCon=document.querySelector('.content');
+            oCol1.onchange=function(){
+                oCon.style.background='-webkit-repeating-linear-gradient(-45deg,'+oCol1.value+' 0,'+oCol1.value+' 20px,#fff 20px,#fff 40px,'+oCol2.value+' 40px,'+oCol2.value+' 60px,#fff 60px,#fff 80px)';
+            };
+            oCol2.onchange=function(){
+                oCon.style.background='-webkit-repeating-linear-gradient(-45deg,'+oCol1.value+' 0,'+oCol1.value+' 20px,#fff 20px,#fff 40px,'+oCol2.value+' 40px,'+oCol2.value+' 60px,#fff 60px,#fff 80px)';
+            };
+
+        };
+    </script>
+</head>
+<body>
+    颜色1：<input type="color" value="#2ad219" class="col1">
+    颜色2：<input type="color" value="#ea11aa" class="col2">
+    <div class="box">
+        <div class="content"></div>
+    </div>
+</body>
+</html>
